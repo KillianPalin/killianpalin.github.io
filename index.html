@@ -26,8 +26,10 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Killian Palin", "url": "https://killianpalin.github.io/", "image": "https://killianpalin.github.io/img/og.jpg", "jobTitle": ["VFX Artist", "Monteur vidéo"], "description": "VFX artist et monteur vidéo freelance basé à Paris : montage publicitaire, VFX, clean, compositing, motion design et IA générative.", "address": {"@type": "PostalAddress", "addressLocality": "Paris", "addressCountry": "FR"}, "email": "mailto:killianpalin.pro@gmail.com", "knowsAbout": ["VFX", "Montage vidéo", "Compositing", "Clean", "Motion design", "IA générative", "Post-production publicitaire"], "sameAs": ["https://www.instagram.com/killianpln/", "https://www.linkedin.com/in/killianpalin"]}</script>
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/hero.jpg">
+<link rel="preload" as="style" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="image" href="img/hero-1920.webp" imagesrcset="img/hero-960.webp 960w, img/hero-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -48,7 +50,7 @@
   <section class="hero-wrap" aria-labelledby="hero-title">
     <div class="hero">
       <div class="hero-frame" data-hero>
-        <img class="hero-still" src="img/hero.jpg" width="1920" height="1088" alt="Killian Palin en sweat noir, adossé bras croisés à une sculpture géante de sa propre tête posée au sol, dans un studio sombre.">
+        <img class="hero-still" src="img/hero-1920.webp" srcset="img/hero-960.webp 960w, img/hero-1920.webp 1920w" sizes="100vw" fetchpriority="high" width="1920" height="1088" alt="Killian Palin en sweat noir, adossé bras croisés à une sculpture géante de sa propre tête posée au sol, dans un studio sombre.">
         <canvas class="hero-canvas" aria-hidden="true"></canvas>
       </div>
       <h1 class="hero-title" id="hero-title">
@@ -96,24 +98,24 @@
     </div>
     <h3 class="brands-title reveal">Ils m'ont fait confiance</h3>
     <ul class="brands" data-reveal aria-label="Marques">
-      <li><img src="img/logos/ysl.svg" alt="Yves Saint Laurent" loading="lazy"></li>
-      <li><img src="img/logos/guerlain.svg" alt="Guerlain" loading="lazy"></li>
+      <li><img src="img/logos/ysl.svg" width="184" height="18" alt="Yves Saint Laurent" loading="lazy"></li>
+      <li><img src="img/logos/guerlain.svg" width="900" height="124" alt="Guerlain" loading="lazy"></li>
       <li><span class="wm wm-serif">Hennessy</span></li>
-      <li><img src="img/logos/lacoste.svg" alt="Lacoste" loading="lazy"></li>
-      <li><img src="img/logos/loreal.svg" alt="L'Oréal" loading="lazy"></li>
+      <li><img src="img/logos/lacoste.svg" width="121" height="18" alt="Lacoste" loading="lazy"></li>
+      <li><img src="img/logos/loreal.svg" width="800" height="145" alt="L'Oréal" loading="lazy"></li>
       <li><span class="wm">CANAL+</span></li>
-      <li><img src="img/logos/adidas.svg" alt="adidas" loading="lazy"></li>
-      <li><img src="img/logos/clarins.svg" alt="Clarins" loading="lazy"></li>
-      <li><img src="img/logos/cisco.svg" alt="Cisco" loading="lazy"></li>
+      <li><img src="img/logos/adidas.svg" width="725" height="500" alt="adidas" loading="lazy"></li>
+      <li><img src="img/logos/clarins.svg" width="132" height="29" alt="Clarins" loading="lazy"></li>
+      <li><img src="img/logos/cisco.svg" width="216" height="114" alt="Cisco" loading="lazy"></li>
       <li><span class="wm">fnac</span></li>
-      <li><img src="img/logos/leclerc.svg" alt="E.Leclerc" loading="lazy"></li>
+      <li><img src="img/logos/leclerc.svg" width="424" height="105" alt="E.Leclerc" loading="lazy"></li>
       <li><span class="wm">SFR</span></li>
       <li><span class="wm">Alain Afflelou</span></li>
-      <li><img src="img/logos/rona.svg" alt="RONA" loading="lazy"></li>
+      <li><img src="img/logos/rona.svg" width="219" height="49" alt="RONA" loading="lazy"></li>
       <li><span class="wm">Heetch</span></li>
       <li><span class="wm">Phyto</span></li>
       <li><span class="wm">RingCentral</span></li>
-      <li><img src="img/logos/havas.svg" alt="Havas" loading="lazy"></li>
+      <li><img src="img/logos/havas.svg" width="213" height="45" alt="Havas" loading="lazy"></li>
     </ul>
   </section>
 

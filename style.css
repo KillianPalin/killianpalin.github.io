@@ -109,7 +109,7 @@ button { font: inherit; color: inherit; }
   font-size: var(--step-note); font-weight: 500; color: var(--muted);
   transition: background-color .25s, color .25s, transform .3s var(--ease-out);
 }
-.chip span { font-variant-numeric: tabular-nums; opacity: .7; }
+.chip span { font-variant-numeric: tabular-nums; opacity: .82; }
 .chip:hover { color: var(--ink); background: var(--surface-2); }
 .chip:active { transform: scale(.96); }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
@@ -175,7 +175,7 @@ button { font: inherit; color: inherit; }
 .contact-where { margin-top: 40px; color: var(--muted); }
 
 .form { background: var(--surface); border-radius: var(--r); padding: clamp(20px, 2.4vw, 36px); display: grid; gap: 18px; }
-.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; } /* taste-skill-ignore : champ anti-spam invisible */
 .types { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .types legend { padding: 0; margin-bottom: 12px; font-size: var(--step-note); color: var(--muted); }
 .types label { cursor: pointer; }
