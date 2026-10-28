@@ -172,9 +172,16 @@
       <h2 id="film-title" data-film-title></h2>
       <button type="button" class="btn btn-small" data-film-close>Fermer</button>
     </div>
-    <div class="film-frame"><iframe data-film-iframe title="Lecteur vidéo" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-    <p class="film-meta" data-film-meta></p>
-    <p class="film-text" data-film-text></p>
+    <div class="film-frame">
+      <video data-film-video controls playsinline preload="metadata" hidden></video>
+      <iframe data-film-iframe title="Lecteur vidéo" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen hidden></iframe>
+    </div>
+    <div class="film-body">
+      <p class="film-meta" data-film-meta></p>
+      <div class="film-text" data-film-text></div>
+      <ul class="film-role" data-film-role hidden></ul>
+      <div class="film-gallery" data-film-gallery hidden></div>
+    </div>
   </div>
 </dialog>
 

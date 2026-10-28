@@ -64,17 +64,46 @@
   /* ---------- Lecteur ---------- */
   const film = document.querySelector('[data-film]');
   const iframe = film.querySelector('[data-film-iframe]');
+  const video = film.querySelector('[data-film-video]');
+  const textEl = film.querySelector('[data-film-text]');
+  const roleEl = film.querySelector('[data-film-role]');
+  const galEl = film.querySelector('[data-film-gallery]');
+  const el = (tag, txt) => { const n = document.createElement(tag); n.textContent = txt; return n; };
   function openFilm(slug) {
     const p = bySlug[slug]; if (!p) return;
     film.querySelector('[data-film-title]').textContent = `${p.brand}, ${p.film}`;
     film.querySelector('[data-film-meta]').textContent = `${cats(p)} · ${p.year}`;
-    film.querySelector('[data-film-text]').textContent = p.text;
-    film.classList.toggle('is-vertical', !!p.vertical); // reels Instagram en 9:16
-    iframe.src = p.embed.replace('lazyLoading=true', 'lazyLoading=false');
+    // description : un ou plusieurs paragraphes
+    textEl.replaceChildren(...[].concat(p.text).filter(Boolean).map(t => el('p', t)));
+    // ce que j'ai fait, en liste
+    const role = p.role || [];
+    roleEl.replaceChildren(...role.map(t => el('li', t))); roleEl.hidden = !role.length;
+    // images du film, du process ou avant / après
+    const imgs = p.images || [];
+    galEl.replaceChildren(...imgs.map(src => {
+      const im = document.createElement('img');
+      im.src = src; im.alt = `${p.brand}, ${p.film}`; im.loading = 'lazy'; im.decoding = 'async';
+      return im;
+    }));
+    galEl.hidden = !imgs.length;
+    film.classList.toggle('is-vertical', !!p.vertical);
+    // vidéo hébergée sur le site si elle existe, sinon le lecteur d'origine
+    if (p.video) {
+      iframe.hidden = true; iframe.src = 'about:blank';
+      video.hidden = false; video.poster = p.poster || ''; video.src = p.video;
+    } else {
+      video.hidden = true; video.removeAttribute('src'); video.load();
+      iframe.hidden = false; iframe.src = p.embed.replace('lazyLoading=true', 'lazyLoading=false');
+    }
     lenis && lenis.stop();
     film.showModal();
+    film.scrollTop = 0;
+    if (p.video) video.play().catch(() => {});
   }
-  film.addEventListener('close', () => { iframe.src = 'about:blank'; lenis && lenis.start(); });
+  film.addEventListener('close', () => {
+    iframe.src = 'about:blank'; video.pause(); video.removeAttribute('src'); video.load();
+    lenis && lenis.start();
+  });
   film.querySelector('[data-film-close]').addEventListener('click', () => film.close());
   film.addEventListener('click', e => { if (e.target === film) film.close(); });
   document.addEventListener('click', e => {
